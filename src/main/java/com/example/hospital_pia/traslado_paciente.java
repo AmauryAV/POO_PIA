@@ -14,7 +14,7 @@ public class traslado_paciente extends registro_base{
     Integer id_doctor;
 
     public traslado_paciente(historial_clinico clinico, String hospital_transferencia ) {
-        super(clinico.nombre_paciente,clinico.apellido_paterno_paciente,clinico.apellido_materno_paciente,
+        super(clinico.nombrepaciente,clinico.apellidopaternopaciente,clinico.apellidomaternopaciente,
                 clinico.direccion_paciente,clinico.telefono_paciente, clinico.correo_paciente,
                 clinico.edad_paciente, clinico.sexo_paciente, clinico.tipo_sangre, clinico.alergias_paciente,
                 clinico.peso, clinico.altura);
@@ -31,7 +31,7 @@ public class traslado_paciente extends registro_base{
     @Override
     void mostrar_informacion() {
         System.out.println("Orden de traslado de paciente");
-        System.out.println("Nombre del paciente: " + this.nombre_paciente + " " + this.apellido_paterno_paciente + " " + this.apellido_materno_paciente);
+        System.out.println("Nombre del paciente: " + this.nombrepaciente + " " + this.apellidopaternopaciente + " " + this.apellidomaternopaciente);
         System.out.println("Diagnostico: " + this.diagnostico);
         System.out.println("Signos vitales: " + this.signos_vitales);
         System.out.println("Tratamiento hasta el momento: " + this.tratamiento);

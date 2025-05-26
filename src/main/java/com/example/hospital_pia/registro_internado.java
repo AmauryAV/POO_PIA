@@ -2,8 +2,6 @@ package com.example.hospital_pia;
 
 import enums.Area_medica;
 
-import java.util.List;
-
 public class registro_internado extends registro_base{
 
     String tratamiento;
@@ -16,7 +14,7 @@ public class registro_internado extends registro_base{
     public static Integer ids = 1;
 
     public registro_internado(historial_clinico historial, Area_medica area) {
-        super(historial.nombre_paciente, historial.apellido_paterno_paciente, historial.apellido_materno_paciente,
+        super(historial.nombrepaciente, historial.apellidopaternopaciente, historial.apellidomaternopaciente,
                 historial.direccion_paciente, historial.telefono_paciente, historial.correo_paciente,
                 historial.edad_paciente, historial.sexo_paciente, historial.tipo_sangre,
                 historial.alergias_paciente, historial.peso, historial.altura);
@@ -33,7 +31,7 @@ public class registro_internado extends registro_base{
     void mostrar_informacion() {
         System.out.println("Registro de ingreso a un area medica" + "    Fecha: " + this.fecharegistro);
         System.out.println("Area medica asignada: " + this.area);
-        System.out.println("Nombre del paciente: " + this.nombre_paciente + " " + this.apellido_paterno_paciente + " " + this.apellido_materno_paciente);
+        System.out.println("Nombre del paciente: " + this.nombrepaciente + " " + this.apellidopaternopaciente + " " + this.apellidomaternopaciente);
         System.out.println("Diagnostico: " + this.diagnostico);
         System.out.println("Tratamiento: " + this.tratamiento);
         System.out.println("Sintomas: " + this.sintomas);

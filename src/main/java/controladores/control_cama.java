@@ -16,7 +16,7 @@ public class control_cama {
         this.area = area;
 
         if (lbl_area != null) {
-            lbl_area.setText("Área: " + area);
+            lbl_area.setText("area: " + area);
         }
 
     }

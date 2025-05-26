@@ -39,7 +39,7 @@ public class historial_clinico extends registro_base{
     public historial_clinico(registro_paciente registro_paciente, String tratamiento,
                              String diagnostico, boolean internado, boolean traslado, boolean alta,
                              List<String> medicinas, List<String> estudios, int id_doctor, String signos) {
-        super(registro_paciente.nombre_paciente, registro_paciente.apellido_paterno_paciente, registro_paciente.apellido_materno_paciente,
+        super(registro_paciente.nombrepaciente, registro_paciente.apellidopaternopaciente, registro_paciente.apellidomaternopaciente,
                 registro_paciente.direccion_paciente, registro_paciente.telefono_paciente, registro_paciente.correo_paciente,
                 registro_paciente.edad_paciente, registro_paciente.sexo_paciente, registro_paciente.tipo_sangre,
                 registro_paciente.alergias_paciente, registro_paciente.peso, registro_paciente.altura);
@@ -57,7 +57,7 @@ public class historial_clinico extends registro_base{
 
     @Override
     void mostrar_informacion() {
-        System.out.println("Nombre del paciente: " + this.nombre_paciente + " " + this.apellido_paterno_paciente + " " + this.apellido_materno_paciente);
+        System.out.println("Nombre del paciente: " + this.nombrepaciente + " " + this.apellidopaternopaciente + " " + this.apellidomaternopaciente);
         System.out.println("Fecha: " + this.fecharegistro);
         System.out.println("Sintomas del paciente: " + this.sintomas);
         System.out.println("Diagnostico: " + this.diagnostico);

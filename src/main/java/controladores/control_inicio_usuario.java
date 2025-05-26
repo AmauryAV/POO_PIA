@@ -1,8 +1,7 @@
 package controladores;
 
 
-import com.example.hospital_pia.Repository;
-import com.example.hospital_pia.usuario;
+import com.example.hospital_pia.*;
 import enums.Tipo_usuario;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +31,15 @@ import java.util.ResourceBundle;
 public class control_inicio_usuario implements Initializable {
     @Autowired
     private Repository repo;
+
+    @Autowired
+    private Repository_enfermero repo_enfermero;
+
+    @Autowired
+    private Repository_doctor repo_doctor;
+
+    @Autowired
+    private Repository_adminitrador repo_adminitrador;
 
     @FXML
     public ComboBox cbRol;
@@ -82,6 +90,18 @@ public class control_inicio_usuario implements Initializable {
             if (verificacion.isPresent()) {
                 usuario ususario_activo = verificacion.get();
                 System.out.println("Inicio de sesion verificado");
+
+                if (ususario_activo.getTipo() == Tipo_usuario.Enfermero) {
+                    enfermero enf = repo_enfermero.findByUsuario(ususario_activo);
+                    usuarioActivo.setPersona(enf);
+                } else if (ususario_activo.getTipo() == Tipo_usuario.Medico) {
+                    doctor doc = repo_doctor.findByUsuario(ususario_activo);
+                    usuarioActivo.setPersona(doc);
+                } else if (ususario_activo.getTipo() == Tipo_usuario.Administrador) {
+                    administrador admin = repo_adminitrador.findByUsuario(ususario_activo);
+                    usuarioActivo.setPersona(admin);
+                }
+
                 Stage menu_actual = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader();
                 if (ususario_activo.getTipo() == Tipo_usuario.Administrador){

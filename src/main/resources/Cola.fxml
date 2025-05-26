@@ -7,14 +7,14 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.control_cola">
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0">
+      <Pane fx:id="panel_cola" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <TableView prefHeight="400.0" prefWidth="600.0">
+            <TableView fx:id="tabla_cola" prefHeight="400.0" prefWidth="600.0">
               <columns>
-                <TableColumn prefWidth="112.79998779296875" text="Triaje" />
-                <TableColumn prefWidth="151.20001220703125" text="Sintomas" />
-                  <TableColumn minWidth="0.0" prefWidth="205.60003662109375" text="Signos vitales" />
-                  <TableColumn prefWidth="128.0" text="Hora de registro" />
+                <TableColumn fx:id="columna_triaje" prefWidth="112.79998779296875" text="Triaje" />
+                <TableColumn fx:id="columna_sintomas" prefWidth="151.20001220703125" text="Sintomas" />
+                  <TableColumn fx:id="columna_signos" minWidth="0.0" prefWidth="205.60003662109375" text="Signos vitales" />
+                  <TableColumn fx:id="columna_hora" prefWidth="128.0" text="Hora de registro" />
               </columns>
             </TableView>
          </children>

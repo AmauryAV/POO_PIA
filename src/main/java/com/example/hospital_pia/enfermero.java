@@ -50,7 +50,7 @@ public class enfermero extends personal{
     public void imprimir_registros() {
         for (registro_paciente paciente : pacientes) {
             System.out.println("Numero de registro: "+paciente.getNumero_registro());
-            System.out.println("Nombre del paciente: " + paciente.nombre_paciente + " " + paciente.apellido_paterno_paciente + " " + paciente.apellido_materno_paciente);
+            System.out.println("Nombre del paciente: " + paciente.nombrepaciente + " " + paciente.apellidopaternopaciente + " " + paciente.apellidomaternopaciente);
             System.out.println("Fecha del registro: " + paciente.fecharegistro);
         }
     }

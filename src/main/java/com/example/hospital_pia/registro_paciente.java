@@ -3,7 +3,6 @@ package com.example.hospital_pia;
 import enums.Triaje;
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -49,7 +48,7 @@ public class registro_paciente extends registro_base implements Comparable<regis
 
     public void informacion_pantalla(){
         System.out.println("Numero de registro: " + numero_registro);
-        System.out.println("Nombre del paciente: " + this.nombre_paciente + " " + this.apellido_paterno_paciente + " " + this.apellido_materno_paciente);
+        System.out.println("Nombre del paciente: " + this.nombrepaciente + " " + this.apellidopaternopaciente + " " + this.apellidomaternopaciente);
         System.out.println("Sintomas: " + sintomas);
     }
 
@@ -57,7 +56,7 @@ public class registro_paciente extends registro_base implements Comparable<regis
     void mostrar_informacion() {
         System.out.println("Numero de registro: " + numero_registro);
         System.out.println("Fecha: " + this.fecharegistro);
-        System.out.println("Nombre del paciente: " + this.nombre_paciente + " " + this.apellido_paterno_paciente + " " + this.apellido_materno_paciente);
+        System.out.println("Nombre del paciente: " + this.nombrepaciente + " " + this.apellidopaternopaciente + " " + this.apellidomaternopaciente);
         System.out.println("Edad del paciente: " + this.edad_paciente);
         System.out.println("Sexo: " + this.sexo_paciente);
         System.out.println("Sintomas: " + sintomas);

@@ -8,4 +8,5 @@ import java.util.Optional;
 
 public interface Repository_registro_paciente extends JpaRepository<registro_paciente, Integer> {
     Optional<registro_paciente> findBySintomasAndSignosvitalesAndTriajeAndFecharegistro(String sintomas, String signosvitales, Triaje triaje, LocalDateTime fecha_registro);
+    Optional<registro_paciente> findByNombrepacienteAndApellidopaternopacienteAndApellidomaternopaciente(String nombrepaciente, String apellidopaternopaciente, String apellidomaternopaciente);
 }

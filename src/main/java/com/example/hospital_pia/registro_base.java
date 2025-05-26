@@ -3,20 +3,19 @@ package com.example.hospital_pia;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
 public abstract class registro_base {
 
-    @Column(name = "nombre_paciente")
-    String nombre_paciente;
+    @Column(name = "nombrepaciente")
+    String nombrepaciente;
 
     @Column(name = "apellido_paterno_paciente")
-    String apellido_paterno_paciente;
+    String apellidopaternopaciente;
 
     @Column(name = "apelliedo_materno_paciente")
-    String apellido_materno_paciente;
+    String apellidomaternopaciente;
 
     @Column(name = "direccion_paciente")
     String direccion_paciente;
@@ -48,12 +47,12 @@ public abstract class registro_base {
     @Column(name = "alergias_paciente")
     String alergias_paciente;
 
-    public registro_base(String nombre_paciente, String apellido_paterno_paciente, String apellido_materno_paciente,
-                         String direccion_paciente, String telefono_paciente, String correo_paciente,int edad_paciente,
+    public registro_base(String nombrepaciente, String apellidopaternopaciente, String apellidomaternopaciente,
+                         String direccion_paciente, String telefono_paciente, String correo_paciente, int edad_paciente,
                          String sexo_paciente, String tipo_sangre, String alergias_paciente, float peso, float altura) {
-        this.nombre_paciente = nombre_paciente;
-        this.apellido_paterno_paciente = apellido_paterno_paciente;
-        this.apellido_materno_paciente = apellido_materno_paciente;
+        this.nombrepaciente = nombrepaciente;
+        this.apellidopaternopaciente = apellidopaternopaciente;
+        this.apellidomaternopaciente = apellidomaternopaciente;
         this.direccion_paciente = direccion_paciente;
         this.telefono_paciente = telefono_paciente;
         this.correo_paciente = correo_paciente;
@@ -70,28 +69,28 @@ public abstract class registro_base {
 
     abstract void mostrar_informacion();
 
-    public String getNombre_paciente() {
-        return nombre_paciente;
+    public String getNombrepaciente() {
+        return nombrepaciente;
     }
 
-    public void setNombre_paciente(String nombre_paciente) {
-        this.nombre_paciente = nombre_paciente;
+    public void setNombrepaciente(String nombre_paciente) {
+        this.nombrepaciente = nombre_paciente;
     }
 
-    public String getApellido_paterno_paciente() {
-        return apellido_paterno_paciente;
+    public String getApellidopaternopaciente() {
+        return apellidopaternopaciente;
     }
 
-    public void setApellido_paterno_paciente(String apellido_paterno_paciente) {
-        this.apellido_paterno_paciente = apellido_paterno_paciente;
+    public void setApellidopaternopaciente(String apellido_paterno_paciente) {
+        this.apellidopaternopaciente = apellido_paterno_paciente;
     }
 
-    public String getApellido_materno_paciente() {
-        return apellido_materno_paciente;
+    public String getApellidomaternopaciente() {
+        return apellidomaternopaciente;
     }
 
-    public void setApellido_materno_paciente(String apellido_materno_paciente) {
-        this.apellido_materno_paciente = apellido_materno_paciente;
+    public void setApellidomaternopaciente(String apellido_materno_paciente) {
+        this.apellidomaternopaciente = apellido_materno_paciente;
     }
 
     public String getDireccion_paciente() {

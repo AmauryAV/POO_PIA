@@ -1,7 +1,10 @@
 package com.example.hospital_pia;
 
+import org.springframework.stereotype.Component;
+
 import java.util.*;
 
+@Component
 public class hospital {
     public Map<Integer, registro_paciente> registros_pacientes;
     public Map<Integer, paciente> pacientes;
@@ -60,13 +63,13 @@ public class hospital {
     }
 
     public paciente verificar_registro_paciente(registro_paciente registro) {
-        String nombre_paciente = registro.getNombre_paciente();
-        String apellido_pat = registro.getApellido_paterno_paciente();
-        String apellido_mater = registro.getApellido_materno_paciente();
+        String nombre_paciente = registro.getNombrepaciente();
+        String apellido_pat = registro.getApellidopaternopaciente();
+        String apellido_mater = registro.getApellidomaternopaciente();
         for (paciente paciente : pacientes.values()) {
-            if (paciente.getNombre_paciente().equalsIgnoreCase(nombre_paciente) &&
-            paciente.getApellido_paterno_paciente().equalsIgnoreCase(apellido_pat) &&
-            paciente.getApellido_materno_paciente().equalsIgnoreCase(apellido_mater)) {
+            if (paciente.getNombrePaciente().equalsIgnoreCase(nombre_paciente) &&
+            paciente.getApellidoPaternoPaciente().equalsIgnoreCase(apellido_pat) &&
+            paciente.getApellidoMaternoPaciente().equalsIgnoreCase(apellido_mater)) {
                 return paciente;
             }
         }
@@ -74,9 +77,9 @@ public class hospital {
     }
 
     public void actualizar_pacinete(paciente pacienteExistente, registro_paciente registro) {
-        pacienteExistente.setNombre_paciente(registro.getNombre_paciente());
-        pacienteExistente.setApellido_paterno_paciente(registro.getApellido_paterno_paciente());
-        pacienteExistente.setApellido_materno_paciente(registro.getApellido_materno_paciente());
+        pacienteExistente.setNombrePaciente(registro.getNombrepaciente());
+        pacienteExistente.setApellidoPaternoPaciente(registro.getApellidopaternopaciente());
+        pacienteExistente.setApellidoMaternoPaciente(registro.getApellidomaternopaciente());
         pacienteExistente.setAlergias_paciente(registro.getAlergias_paciente());
         pacienteExistente.setCorreo_paciente(registro.getCorreo_paciente());
         pacienteExistente.setDireccion_paciente(registro.getDireccion_paciente());

@@ -1,30 +1,50 @@
 package controladores;
 
-import com.example.hospital_pia.Repository_registro_paciente;
-import com.example.hospital_pia.registro_paciente;
+import com.example.hospital_pia.*;
 import enums.Triaje;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.event.Event;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 @Component
 public class control_enfermero implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        cargar_cola("Cola de pacientes", panel_cola_pacientes);
     }
 
     @Autowired
-    private Repository_registro_paciente rep_paciente;
+    private Repository_registro_paciente rep_reg_paciente;
+
+    @Autowired
+    private Repository_enfermero rep_enfermero;
+
+    @Autowired
+    private Repository_pasiente rep_pasiente;
+
+    @Autowired
+    private hospital hospitalGlobal;
+
+    @FXML
+    TabPane enfermero_menu;
+
+    @FXML
+    Tab pestana_cola;
 
     @FXML
     public TextField ingre_nombre;
@@ -58,6 +78,9 @@ public class control_enfermero implements Initializable {
 
     @FXML
     public Label txt_triaje;
+
+    @FXML
+    public AnchorPane panel_cola_pacientes;
 
     @FXML
     public TextField ingre_alergia;
@@ -102,11 +125,9 @@ public class control_enfermero implements Initializable {
         combo.setItems(infocombo);
     }
 
-    public void guardar_registro(Event event) {
-
-    }
-
-    public void crear_registro(){
+    public void crear_registro(ActionEvent event) throws IOException {
+        personal usuarioActibo = usuarioActivo.getPersona();
+        Integer id = usuarioActibo.getUsuario().getId();
         String nombre = ingre_nombre.getText();
         String ape_pate = ingre_ape_pate.getText();
         String ape_mate = ingre_ape_mate.getText();
@@ -118,7 +139,7 @@ public class control_enfermero implements Initializable {
         String peso = ingre_peso.getText();
         float peso_valido = Float.parseFloat(peso);
         String altura = ingre_altura.getText();
-        float altura_valida = Integer.parseInt(altura);
+        float altura_valida = Float.parseFloat(altura);
         String alergia = ingre_alergia.getText();
         String sexo = opcio_sexo.getSelectionModel().getSelectedItem().toString();
         String sangre = opcio_sangre.getSelectionModel().getSelectedItem().toString();
@@ -127,7 +148,37 @@ public class control_enfermero implements Initializable {
         String signo_vita = ingre_signos_vita.getText();
         Triaje triaje_valido = Triaje.valueOf(triaje);
         registro_paciente nuevo_regis = new registro_paciente(nombre, ape_pate, ape_mate,
-                direcc, tele, correo, edad_valida, sexo, sangre, alergia, sintomas, signo_vita, triaje_valido, 6,peso_valido, altura_valida);
+                direcc, tele, correo, edad_valida, sexo, sangre, alergia, sintomas, signo_vita, triaje_valido
+                , id,peso_valido, altura_valida);
+        Optional<registro_paciente> verificacion = rep_reg_paciente.findByNombrepacienteAndApellidopaternopacienteAndApellidomaternopaciente(nombre, ape_pate, ape_mate);
+        if (!verificacion.isPresent()) {
+            paciente nuevo_paciente = new paciente(nuevo_regis);
+            rep_pasiente.save(nuevo_paciente);
+        }
+        rep_reg_paciente.save(nuevo_regis);
+
+        //hospital hpt = usuarioActivo.getHospital();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Cola.fxml"));
+        Parent root = loader.load();
+        control_cola controlCola = loader.getController();
+        controlCola.agregar_paciente(nuevo_regis, hospitalGlobal);
     }
 
+    public void cargar_cola(String area, AnchorPane pesta){
+        try{
+            FXMLLoader carga = new FXMLLoader(getClass().getResource("/Cola.fxml"));
+            Parent root = carga.load();
+            control_cola cc = carga.getController();
+            cc.setArea(area);
+            pesta.getChildren().setAll(root);
+            AnchorPane.setTopAnchor(root, 0.0);
+            AnchorPane.setLeftAnchor(root, 0.0);
+            AnchorPane.setRightAnchor(root, 0.0);
+            AnchorPane.setBottomAnchor(root, 0.0);
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+    }
 }

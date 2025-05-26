@@ -1,12 +1,22 @@
 package com.example.hospital_pia;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "doctor")
 public class doctor extends personal {
 
+    @Column(name = "especialidad")
     String especialidad;
+
+    @Transient
     List<historial_clinico> historial_clinicos;
+
+    @Transient
     List<receta_paciente> recetas_emitidas;
 
     public doctor(String nombre, String apellido_paterno, String apellido_materno, String direccion,
@@ -16,6 +26,8 @@ public class doctor extends personal {
         this.historial_clinicos = new ArrayList<historial_clinico>();
         this.recetas_emitidas = new ArrayList<>();
     }
+
+    public doctor() {}
 
     @Override
     public String nombreCompleto() {

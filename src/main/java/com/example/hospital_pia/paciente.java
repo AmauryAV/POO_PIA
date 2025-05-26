@@ -1,31 +1,60 @@
 package com.example.hospital_pia;
 
-import java.time.LocalDate;
+import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 import java.util.*;
 
+@Entity
+@Table(name = "paciente")
 public class paciente {
 
-    String nombre_paciente;
-    String apellido_paterno_paciente;
-    String apellido_materno_paciente;
+    @Column(name = "nombrePaciente")
+    String nombrePaciente;
+
+    @Column(name = "apellidoPaternoPaciente")
+    String apellidoPaternoPaciente;
+
+    @Column(name = "apellidoMaternoPaciente")
+    String apellidoMaternoPaciente;
+
+    @Column(name = "direccion_paciente")
     String direccion_paciente;
+
+    @Column(name = "telefono_pciente")
     String telefono_paciente;
+
+    @Column(name = "correo_paciente")
     String correo_paciente;
+
+    @Column(name = "fecha_registro")
     LocalDateTime fecha_registro;
 
+    @Column(name = "sexo_paciente")
     String sexo_paciente;
+
+    @Column(name = "tipo_sangre")
     String tipo_sangre;
+
+    @Column(name = "alergias_paciente")
     String alergias_paciente;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id_paciente;
+
+    @Transient
     List<registro_paciente> registro_pacientes;
+
+    @Transient
     List<historial_clinico> historial_clinicos;
     public static Integer id_registro_paciente;
 
     public paciente(registro_paciente registro) {
-        this.nombre_paciente = registro.getNombre_paciente();
-        this.apellido_paterno_paciente = registro.getApellido_paterno_paciente();
-        this.apellido_materno_paciente = registro.getApellido_materno_paciente();
+        this.nombrePaciente = registro.getNombrepaciente();
+        this.apellidoPaternoPaciente = registro.getApellidopaternopaciente();
+        this.apellidoMaternoPaciente = registro.getApellidomaternopaciente();
         this.direccion_paciente = registro.getDireccion_paciente();
         this.telefono_paciente = registro.getTelefono_paciente();
         this.correo_paciente = registro.getCorreo_paciente();
@@ -38,9 +67,10 @@ public class paciente {
         this.historial_clinicos = new ArrayList<>();
 
     }
+    public paciente() {}
 
     public void imprimirDatosContacto() {
-        System.out.println("Paciente: " + this.nombre_paciente + " " + this.apellido_paterno_paciente + " " + this.apellido_materno_paciente);
+        System.out.println("Paciente: " + this.nombrePaciente + " " + this.apellidoPaternoPaciente + " " + this.apellidoMaternoPaciente);
         System.out.println("Teléfono: " + this.telefono_paciente);
         System.out.println("Correo: " + this.correo_paciente);
     }
@@ -53,28 +83,28 @@ public class paciente {
         this.historial_clinicos.add(historial_clinico);
     }
 
-    public String getNombre_paciente() {
-        return nombre_paciente;
+    public String getNombrePaciente() {
+        return nombrePaciente;
     }
 
-    public void setNombre_paciente(String nombre_paciente) {
-        this.nombre_paciente = nombre_paciente;
+    public void setNombrePaciente(String nombrePaciente) {
+        this.nombrePaciente = nombrePaciente;
     }
 
-    public String getApellido_paterno_paciente() {
-        return apellido_paterno_paciente;
+    public String getApellidoPaternoPaciente() {
+        return apellidoPaternoPaciente;
     }
 
-    public void setApellido_paterno_paciente(String apellido_paterno_paciente) {
-        this.apellido_paterno_paciente = apellido_paterno_paciente;
+    public void setApellidoPaternoPaciente(String apellidoPaternoPaciente) {
+        this.apellidoPaternoPaciente = apellidoPaternoPaciente;
     }
 
-    public String getApellido_materno_paciente() {
-        return apellido_materno_paciente;
+    public String getApellidoMaternoPaciente() {
+        return apellidoMaternoPaciente;
     }
 
-    public void setApellido_materno_paciente(String apellido_materno_paciente) {
-        this.apellido_materno_paciente = apellido_materno_paciente;
+    public void setApellidoMaternoPaciente(String apellidoMaternoPaciente) {
+        this.apellidoMaternoPaciente = apellidoMaternoPaciente;
     }
 
     public String getDireccion_paciente() {

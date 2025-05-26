@@ -1,5 +1,10 @@
 package com.example.hospital_pia;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "administrador")
 public class administrador extends personal{
 
 
@@ -7,6 +12,8 @@ public class administrador extends personal{
                          String direccion, String telefono, String correo, usuario usu) {
         super(nombre, apellido_paterno, apellido_materno, direccion, telefono, correo, usu);
     }
+
+    public administrador() {}
 
     public void agregar_doctor (doctor doc, hospital hosp) {
         hosp.anadir_doctor(doc);
