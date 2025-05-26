@@ -1,11 +1,19 @@
 package com.example.hospital_pia;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "enfermero")
 public class enfermero extends personal{
 
+    @Transient
     List<registro_paciente> pacientes;
+
+    @Column(name= "turno")
     String turno;
     public enfermero(String nombre, String apellido_paterno, String apellido_materno,
                      String direccion, String telefono, String correo, usuario usu, String turno) {
@@ -13,6 +21,8 @@ public class enfermero extends personal{
         this.turno = turno;
         pacientes = new ArrayList<registro_paciente>();
     }
+
+    public enfermero() {}
 
     @Override
     public String nombreCompleto() {
@@ -41,7 +51,7 @@ public class enfermero extends personal{
         for (registro_paciente paciente : pacientes) {
             System.out.println("Numero de registro: "+paciente.getNumero_registro());
             System.out.println("Nombre del paciente: " + paciente.nombre_paciente + " " + paciente.apellido_paterno_paciente + " " + paciente.apellido_materno_paciente);
-            System.out.println("Fecha del registro: " + paciente.fecha_registro);
+            System.out.println("Fecha del registro: " + paciente.fecharegistro);
         }
     }
 

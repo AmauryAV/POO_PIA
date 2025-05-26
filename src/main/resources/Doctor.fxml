@@ -1,14 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controladores.control_doctor"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.control_doctor">
+   <children>
+      <TabPane fx:id="doctor_menu" prefHeight="475.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="histroial_clinicoPestana" text="Historial Clinico">
+            <content>
+              <AnchorPane fx:id="panel_historial_clinico" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="txt_diagnostico" layoutX="35.0" layoutY="56.0" text="Diagnostico">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txt_tratamiento" layoutX="34.0" layoutY="112.0" text="Tratamiento">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txt_medicacacion" layoutX="36.0" layoutY="169.0" text="Medicación">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txt_estudios" layoutX="36.0" layoutY="225.0" text="Estudios">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txt_signos" layoutX="36.0" layoutY="282.0" text="Signos vitales">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txt_continuacion" layoutX="36.0" layoutY="347.0" text="Continuación de estado">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="ingre_diagnostico" layoutX="208.0" layoutY="46.0" prefHeight="46.0" prefWidth="364.0" />
+                        <TextArea fx:id="ingre_tratamiento" layoutX="208.0" layoutY="102.0" prefHeight="46.0" prefWidth="364.0" />
+                        <TextArea fx:id="ingre_medicacion" layoutX="208.0" layoutY="159.0" prefHeight="46.0" prefWidth="364.0" />
+                        <TextArea fx:id="ingre_estudios" layoutX="208.0" layoutY="215.0" prefHeight="46.0" prefWidth="364.0" />
+                        <TextArea fx:id="ingre_signos_vitales" layoutX="208.0" layoutY="271.0" prefHeight="46.0" prefWidth="364.0" />
+                        <ComboBox fx:id="opcio_conti_estado" layoutX="315.0" layoutY="347.0" prefWidth="150.0" />
+                        <Button fx:id="guardar_historial" layoutX="270.0" layoutY="406.0" mnemonicParsing="false" text="Guardar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="paciente_internadoPestana" text="Pacientes internados">
+            <content>
+              <AnchorPane fx:id="panel_pacientes_inter" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane fx:id="doc_men_inter" prefHeight="446.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="uci_pestana" text="UCI">
+                              <content>
+                                <AnchorPane fx:id="panel_UCI" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                            <Tab fx:id="pediatria_pestana" text="Pediatria">
+                              <content>
+                                <AnchorPane fx:id="panel_Pedia" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                              <Tab fx:id="obstetricia_pestana" text="Obstetricia">
+                                <content>
+                                  <AnchorPane fx:id="panel_Obste" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                              <Tab fx:id="trauma_pestana" text="Traumatología">
+                                <content>
+                                  <AnchorPane fx:id="panel_Trauma" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                              <Tab fx:id="onco_pestana" text="Oncología">
+                                <content>
+                                  <AnchorPane fx:id="panel_Onco" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="colas_esperaPestana" text="Pacientes en espera">
+              <content>
+                <AnchorPane fx:id="panel_pacientes_espera" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>

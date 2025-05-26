@@ -58,7 +58,7 @@ public class historial_clinico extends registro_base{
     @Override
     void mostrar_informacion() {
         System.out.println("Nombre del paciente: " + this.nombre_paciente + " " + this.apellido_paterno_paciente + " " + this.apellido_materno_paciente);
-        System.out.println("Fecha: " + this.fecha_registro);
+        System.out.println("Fecha: " + this.fecharegistro);
         System.out.println("Sintomas del paciente: " + this.sintomas);
         System.out.println("Diagnostico: " + this.diagnostico);
         for (String medicina : this.medicinas) {

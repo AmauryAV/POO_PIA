@@ -18,7 +18,7 @@ public class registro_defuncion extends registro_base{
     @Override
     void mostrar_informacion() {
         System.out.println("Nombre del paciente: " + this.nombre_paciente + " " + this.apellido_paterno_paciente + " " + this.apellido_materno_paciente);
-        System.out.println("Hora de la muerte: " + this.fecha_registro);
+        System.out.println("Hora de la muerte: " + this.fecharegistro);
         System.out.println("Sintomas con los que se presento: " + this.sintomas);
 
     }

@@ -13,7 +13,7 @@ public class paciente {
     String telefono_paciente;
     String correo_paciente;
     LocalDateTime fecha_registro;
-    LocalDate fecha_nacimiento;
+
     String sexo_paciente;
     String tipo_sangre;
     String alergias_paciente;
@@ -30,7 +30,7 @@ public class paciente {
         this.telefono_paciente = registro.getTelefono_paciente();
         this.correo_paciente = registro.getCorreo_paciente();
         this.fecha_registro = registro.getFecha_registro();
-        this.fecha_nacimiento = registro.getFecha_nacimineto();
+
         this.sexo_paciente = registro.getSexo_paciente();
         this.tipo_sangre = registro.getTipo_sangre();
         this.alergias_paciente = registro.getAlergias_paciente();
@@ -107,14 +107,6 @@ public class paciente {
 
     public void setFecha_registro(LocalDateTime fecha_registro) {
         this.fecha_registro = fecha_registro;
-    }
-
-    public LocalDate getFecha_nacimiento() {
-        return fecha_nacimiento;
-    }
-
-    public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
     }
 
     public String getSexo_paciente() {

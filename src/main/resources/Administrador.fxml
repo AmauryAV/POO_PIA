@@ -1,14 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controladores.control_administrador"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.control_administrador">
+   <children>
+      <TabPane fx:id="menu_admi" prefHeight="510.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="pestana_regis_personal" text="Registrar Personal">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="458.0">
+                     <children>
+                        <TabPane prefHeight="478.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="pestana_regis_admi" text="Administrativo">
+                              <content>
+                                <AnchorPane fx:id="panel_pesta_admi" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="txt_nombre_admi" layoutX="30.0" layoutY="49.0" text="Nombre">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_ape_mate_admi" layoutX="30.0" layoutY="93.0" text="Apellido paterno">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_direc_admi" layoutX="30.0" layoutY="176.0" text="Dirección">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_ape_mate_admi" layoutX="30.0" layoutY="134.0" text="Apellido materno">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_telefono_admi" layoutX="30.0" layoutY="218.0" text="Telefono">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_correo_admi" layoutX="30.0" layoutY="262.0" text="Correo">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="boton_guardar_admi" layoutX="248.0" layoutY="372.0" mnemonicParsing="false" text="Guardar registro" />
+                                          <TextField fx:id="ingre_nombre_admi" layoutX="202.0" layoutY="46.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_ape_mate_admi" layoutX="202.0" layoutY="131.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_ape_pate_admi" layoutX="202.0" layoutY="90.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_direc_admi" layoutX="202.0" layoutY="173.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_telefono_admi" layoutX="202.0" layoutY="215.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_correo_admi" layoutX="202.0" layoutY="259.0" prefHeight="26.0" prefWidth="354.0" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="pestana_regis_medico" text="Medico">
+                              <content>
+                                <AnchorPane fx:id="panel_pesta_medico" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="txt_nombre_medico" layoutX="30.0" layoutY="49.0" text="Nombre">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_ape_pate_medi" layoutX="30.0" layoutY="93.0" text="Apellido paterno">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_ape_mate_medi" layoutX="30.0" layoutY="134.0" text="Apellido materno">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_direccion_medi" layoutX="30.0" layoutY="176.0" text="Dirección">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_telefono_medi" layoutX="30.0" layoutY="218.0" text="Telefono">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_corro_medico" layoutX="30.0" layoutY="262.0" text="Correo">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_especialidad_medi" layoutX="30.0" layoutY="301.0" text="Especialidad">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="ingre_nombre_medi" layoutX="202.0" layoutY="46.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_ape_pate_medi" layoutX="202.0" layoutY="90.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_ape_mate_medi" layoutX="202.0" layoutY="131.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_direc_medi" layoutX="202.0" layoutY="173.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_telefono_medi" layoutX="202.0" layoutY="215.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_correo_medi" layoutX="202.0" layoutY="259.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_especialidad_medi" layoutX="202.0" layoutY="298.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <Button fx:id="boton_guardar_medi" layoutX="248.0" layoutY="372.0" mnemonicParsing="false" text="Guardar registro" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="pestana_regis_enferme" text="Enfermero">
+                                <content>
+                                  <AnchorPane fx:id="panel_pesta_enferme" minHeight="0.0" minWidth="0.0" prefHeight="422.0" prefWidth="600.0">
+                                       <children>
+                                          <Label fx:id="txt_nombre_enfer" layoutX="30.0" layoutY="49.0" text="Nombre">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_ape_pate_enfer" layoutX="30.0" layoutY="93.0" text="Apellido paterno">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_ape_mate_enfer" layoutX="30.0" layoutY="134.0" text="Apellido materno">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_direccion_enfer" layoutX="30.0" layoutY="176.0" text="Dirección">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_telefono_enfer" layoutX="30.0" layoutY="218.0" text="Telefono">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_correo_enfer" layoutX="30.0" layoutY="262.0" text="Correo">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_turno_enfer" layoutX="30.0" layoutY="301.0" text="Turno">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="ingre_nombre_enfer" layoutX="202.0" layoutY="46.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_ape_mate_enfer" layoutX="202.0" layoutY="131.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_ape_pate_enfer" layoutX="202.0" layoutY="90.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_direcc_enfer" layoutX="202.0" layoutY="173.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_tele_enfer" layoutX="202.0" layoutY="215.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_correo_enfer" layoutX="202.0" layoutY="259.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <TextField fx:id="ingre_turno_enfer" layoutX="202.0" layoutY="298.0" prefHeight="26.0" prefWidth="354.0" />
+                                          <Button fx:id="boton_guardar_enfer" layoutX="248.0" layoutY="372.0" mnemonicParsing="false" text="Guardar registro" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="pestana_defunciones" text="Defunciones del día">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>

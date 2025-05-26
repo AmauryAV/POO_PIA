@@ -31,7 +31,7 @@ public class registro_internado extends registro_base{
 
     @Override
     void mostrar_informacion() {
-        System.out.println("Registro de ingreso a un area medica" + "    Fecha: " + this.fecha_registro);
+        System.out.println("Registro de ingreso a un area medica" + "    Fecha: " + this.fecharegistro);
         System.out.println("Area medica asignada: " + this.area);
         System.out.println("Nombre del paciente: " + this.nombre_paciente + " " + this.apellido_paterno_paciente + " " + this.apellido_materno_paciente);
         System.out.println("Diagnostico: " + this.diagnostico);

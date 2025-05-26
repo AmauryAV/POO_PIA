@@ -15,7 +15,7 @@ public class receta_paciente extends registro_base{
 
     @Override
     void mostrar_informacion() {
-        System.out.println("Receta emitida el :" + this.fecha_registro);
+        System.out.println("Receta emitida el :" + this.fecharegistro);
         System.out.println("Nombre del paciente: " + this.nombre_paciente + " " + this.apellido_paterno_paciente + " " + this.apellido_materno_paciente);
         System.out.println("Talla: " + this.altura + "    Peso: " + this.peso + "    Edad: " + this.edad_paciente);
         for(String medicina: medicinas) {

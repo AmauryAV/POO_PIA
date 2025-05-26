@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controladores.control_traslado"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane fx:id="ventana_traslado" prefHeight="262.0" prefWidth="467.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.control_traslado">
+   <children>
+      <Pane fx:id="panel_traslado" prefHeight="262.0" prefWidth="467.0">
+         <children>
+            <Label fx:id="txt_titulo_traslado" layoutX="113.0" layoutY="21.0" text="Orden de traslado de paciente">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt_hospital_trasla" layoutX="16.0" layoutY="103.0" prefHeight="36.0" prefWidth="146.0" text="Hospital para trasladado">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ingre_hospi_traslado" layoutX="187.0" layoutY="109.0" prefHeight="25.0" prefWidth="257.0" />
+            <Button fx:id="boton_confir_traslado" layoutX="173.0" layoutY="197.0" mnemonicParsing="false" text="Confirmar traslado" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
